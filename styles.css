@@ -21,6 +21,7 @@ body {
 body {
   overflow-x: hidden;
   overflow-y: auto;
+  scroll-snap-type: y mandatory;
 }
 
 .story-page {
@@ -155,6 +156,7 @@ h1 {
 
 .story-track section {
   height: 100vh;
+  scroll-snap-align: start;
 }
 
 @media (max-width: 720px) {
