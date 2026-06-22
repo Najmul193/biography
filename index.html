@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The World Within</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.165.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.165.0/examples/jsm/"
+        }
+      }
+    </script>
+</head>
+
+<body>
+  <main class="story-page">
+    <div class="story-shell">
+      <canvas id="world-canvas" aria-label="3D story world"></canvas>
+
+      <section class="story-panel" aria-label="Story chapter">
+        <p class="kicker" id="chapter-kicker">Opening View</p>
+        <h1 id="chapter-title">The World Within</h1>
+        <p id="chapter-copy">
+          A small hidden world waits inside the larger scene.
+        </p>
+      </section>
+
+      <nav class="chapter-nav" aria-label="Story chapters">
+        <a href="#overview" class="active">00</a>
+        <a href="#campfire">01</a>
+        <a href="#bike">02</a>
+        <a href="#garage">03</a>
+        <a href="#home">04</a>
+        <a href="#dog">05</a>
+        <a href="#walkway">06</a>
+        <a href="#river">07</a>
+      </nav>
+
+      <div id="load-state" class="load-state">Loading world</div>
+    </div>
+
+    <div class="story-track" aria-hidden="true">
+      <section id="overview" data-chapter="0"></section>
+      <section id="campfire" data-chapter="1"></section>
+      <section id="bike" data-chapter="2"></section>
+      <section id="garage" data-chapter="3"></section>
+      <section id="home" data-chapter="4"></section>
+      <section id="dog" data-chapter="5"></section>
+      <section id="walkway" data-chapter="6"></section>
+      <section id="river" data-chapter="7"></section>
+    </div>
+  </main>
+
+  <script type="module" src="./app.js?v=inner-overview-outer-bg-3"></script>
+</body>
+
+</html>
