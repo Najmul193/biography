@@ -343,10 +343,15 @@ function setActiveChapter(index) {
     controls.target.copy(chapter.lookAt);
   }
 
-  chapterKicker.textContent =
-    nextIndex === 0 ? "Opening View" : `Chapter ${String(nextIndex).padStart(2, "0")}`;
-  chapterTitle.textContent = chapter.title;
-  chapterCopy.textContent = chapter.copy;
+  chapterKicker.textContent = "";
+
+  if (nextIndex === 0) {
+    chapterTitle.textContent = "Hi I'm Najmul";
+    chapterCopy.textContent = "From the hill tracks of Khagrachari — a world of green hills, winding roads, and memories.";
+  } else {
+    chapterTitle.textContent = chapter.title;
+    chapterCopy.textContent = chapter.copy;
+  }
 
   chapterLinks.forEach((link, linkIndex) => {
     link.classList.toggle("active", linkIndex === nextIndex);
