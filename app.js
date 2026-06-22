@@ -7,7 +7,6 @@ const loadState = document.querySelector("#load-state");
 const chapterKicker = document.querySelector("#chapter-kicker");
 const chapterTitle = document.querySelector("#chapter-title");
 const chapterCopy = document.querySelector("#chapter-copy");
-const chapterLinks = [...document.querySelectorAll(".chapter-nav a")];
 const chapterSections = [...document.querySelectorAll("[data-chapter]")];
 
 const renderer = new THREE.WebGLRenderer({
@@ -353,9 +352,6 @@ function setActiveChapter(index) {
     chapterCopy.textContent = chapter.copy;
   }
 
-  chapterLinks.forEach((link, linkIndex) => {
-    link.classList.toggle("active", linkIndex === nextIndex);
-  });
 }
 
 async function loadWorlds() {
@@ -425,10 +421,6 @@ window.addEventListener("scroll", () => {
   const index = Math.round(window.scrollY / chapterHeight);
 
   if (index !== activeChapter) setActiveChapter(index);
-});
-
-chapterLinks.forEach((link, index) => {
-  link.addEventListener("click", () => setActiveChapter(index));
 });
 
 const observer = new IntersectionObserver(
